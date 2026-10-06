@@ -1,0 +1,72 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["eslint.config.mjs", ".prettierrc.json", "apps/web/.env.local"],
+  "globalEnv": [
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "NEXT_PUBLIC_SUPABASE_GOOGLE_ENABLED",
+    "DATABASE_URL",
+    "PORT"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "LIVEKIT_URL",
+        "LIVEKIT_API_KEY",
+        "LIVEKIT_API_SECRET",
+        "NEXT_PUBLIC_SITE_URL",
+        "GEMINI_API_KEY",
+        "N8N_TASK_WEBHOOK_URL",
+        "N8N_WEBHOOK_SECRET",
+        "RECORDING_S3_ENDPOINT",
+        "RECORDING_S3_REGION",
+        "RECORDING_S3_BUCKET",
+        "RECORDING_S3_ACCESS_KEY",
+        "RECORDING_S3_SECRET_KEY"
+      ]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "LIVEKIT_URL",
+        "LIVEKIT_API_KEY",
+        "LIVEKIT_API_SECRET",
+        "NEXT_PUBLIC_SITE_URL",
+        "GEMINI_API_KEY",
+        "N8N_TASK_WEBHOOK_URL",
+        "N8N_WEBHOOK_SECRET",
+        "RECORDING_S3_ENDPOINT",
+        "RECORDING_S3_REGION",
+        "RECORDING_S3_BUCKET",
+        "RECORDING_S3_ACCESS_KEY",
+        "RECORDING_S3_SECRET_KEY"
+      ]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["^test"],
+      "outputs": []
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:verify": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@source "../../../../packages/ui/src";
+
+@theme {
+  --color-canvas: #f6f8fb;
+  --color-ink: #192536;
+  --color-muted: #6e7b8d;
+  --color-line: #e5eaf0;
+  --color-brand: #167d73;
+  --color-brand-dark: #11665e;
+  --color-brand-soft: #e8f5f2;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #cce8e2;
+}
